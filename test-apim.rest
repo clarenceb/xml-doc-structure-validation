@@ -1,0 +1,58 @@
+@apiEndpoint = https://<your-apim>.azure-api.net/<your-function-app-name>
+@subscriptionKey = {{$dotenv subscriptionKey}}
+
+###
+POST {{apiEndpoint}}/MessageSizeLimitFunc
+Content-Type: application/xml
+Ocp-Apim-Subscription-Key: {{subscriptionKey}}
+
+< ./test-docs/ValidSOAP.xml
+
+###
+POST {{apiEndpoint}}/MessageSizeLimitFunc
+Content-Type: application/xml
+Ocp-Apim-Subscription-Key: {{subscriptionKey}}
+
+< ./test-docs/InvalidSOAP-max-message-size.xml
+
+###
+POST {{apiEndpoint}}/XmlValidatorFunc
+Content-Type: application/xml
+Ocp-Apim-Subscription-Key: {{subscriptionKey}}
+
+< ./test-docs/ValidSOAP.xml
+
+###
+POST {{apiEndpoint}}/XmlValidatorFunc
+Content-Type: application/xml
+Ocp-Apim-Subscription-Key: {{subscriptionKey}}
+
+< ./test-docs/InvalidSOAP-attr-name-length.xml
+
+###
+POST {{apiEndpoint}}/XmlValidatorFunc
+Content-Type: application/xml
+Ocp-Apim-Subscription-Key: {{subscriptionKey}}
+
+< ./test-docs/InvalidSOAP-attr-value-length.xml
+
+###
+POST {{apiEndpoint}}/XmlValidatorFunc
+Content-Type: application/xml
+Ocp-Apim-Subscription-Key: {{subscriptionKey}}
+
+< ./test-docs/InvalidSOAP-max-text-length.xml
+
+###
+POST {{apiEndpoint}}/XmlValidatorFunc
+Content-Type: application/xml
+Ocp-Apim-Subscription-Key: {{subscriptionKey}}
+
+< ./test-docs/InvalidSOAP-max-CDATA-length.xml
+
+###
+POST {{apiEndpoint}}/XmlValidatorFunc
+Content-Type: application/xml
+Ocp-Apim-Subscription-Key: {{subscriptionKey}}
+
+< ./test-docs/InvalidSOAP-nesting-levels.xml

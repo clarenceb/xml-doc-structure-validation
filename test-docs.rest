@@ -1,0 +1,51 @@
+@apiEndpoint = http://localhost:7071
+# @apiEndpoint = https://<your-function-app>.azurewebsites.net
+@funcAppKey = {{$dotenv funcAppKey}}
+
+###
+POST {{apiEndpoint}}/api/MessageSizeLimitFunc?code={{funcAppKey}}
+Content-Type: application/xml
+
+< ./test-docs/ValidSOAP.xml
+
+###
+POST {{apiEndpoint}}/api/MessageSizeLimitFunc?code={{funcAppKey}}
+Content-Type: application/xml
+
+< ./test-docs/InvalidSOAP-max-message-size.xml
+
+###
+POST {{apiEndpoint}}/api/XmlValidatorFunc?code={{funcAppKey}}
+Content-Type: application/xml
+
+< ./test-docs/ValidSOAP.xml
+
+###
+POST {{apiEndpoint}}/api/XmlValidatorFunc?code={{funcAppKey}}
+Content-Type: application/xml
+
+< ./test-docs/InvalidSOAP-attr-name-length.xml
+
+###
+POST {{apiEndpoint}}/api/XmlValidatorFunc?code={{funcAppKey}}
+Content-Type: application/xml
+
+< ./test-docs/InvalidSOAP-attr-value-length.xml
+
+###
+POST {{apiEndpoint}}/api/XmlValidatorFunc?code={{funcAppKey}}
+Content-Type: application/xml
+
+< ./test-docs/InvalidSOAP-max-text-length.xml
+
+###
+POST {{apiEndpoint}}/api/XmlValidatorFunc?code={{funcAppKey}}
+Content-Type: application/xml
+
+< ./test-docs/InvalidSOAP-max-CDATA-length.xml
+
+###
+POST {{apiEndpoint}}/api/XmlValidatorFunc?code={{funcAppKey}}
+Content-Type: application/xml
+
+< ./test-docs/InvalidSOAP-nesting-levels.xml

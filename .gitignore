@@ -1,0 +1,6 @@
+.vs/
+.vscode/
+Prompts.txt
+.env
+obj/
+bin/

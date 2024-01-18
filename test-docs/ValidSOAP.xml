@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.example.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ExampleRequest>
+         <web:ExampleElement attribute1="This is a valid attribute value.">
+            This is a valid text node.
+         </web:ExampleElement>
+      </web:ExampleRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
